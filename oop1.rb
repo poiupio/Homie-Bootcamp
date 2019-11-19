@@ -1,4 +1,4 @@
-class Usuario
+class User
   attr_accessor :name, :last_name
 
   def initialize(name, last_name)
