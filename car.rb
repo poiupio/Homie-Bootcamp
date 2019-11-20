@@ -19,7 +19,7 @@ class Car
   end
 
   def stop
-    raise('the car must be started or in travel to stop') unless @state == ('started' || 'traveling')
+    raise('the car must be started or in travel to stop') unless ['started', 'traveling'].include?(state)
     @state = 'stop'
   end
 end
