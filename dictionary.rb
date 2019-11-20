@@ -17,4 +17,4 @@ class Dictionary
   end
 end
 
-p Dictionary.translate('spanish','oWner')
+p Dictionary.translate('spanish','owner')
