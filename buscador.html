@@ -5,16 +5,16 @@
 
   const search = term => {
     const glosary = [...names, ...animals, ...things];
-    let matches = []; 
+    let wordsFound = []; 
     term = term.toLowerCase();
     
     glosary.forEach( word => {
       if( word.toLocaleLowerCase().includes(term)){ 
-          matches.push(word); 
+          wordsFound.push(word); 
       }
     });
 
-    return matches;
+    return wordsFound;
   }
 
   console.log(search('rIa'));
