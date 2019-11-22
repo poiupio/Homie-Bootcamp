@@ -15,7 +15,6 @@ class Car
   def travel
     raise('The car must be started to travel') unless @state == 'started'
     @state = 'traveling'
- 
   end
 
   def stop
