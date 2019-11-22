@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h2 id = 'sayText'>-></h2>
+  <input type="text" id='inputText'>
+  <input type="button" value="Say" id='textButton'>
+</body>
+<script>
+  document.getElementById('textButton').addEventListener('click', ()=>{
+    const textToSay = document.getElementById('inputText').value;
+    document.getElementById('sayText').innerHTML = `-> ${textToSay}`;
+  }); 
+</script>
+</html>
