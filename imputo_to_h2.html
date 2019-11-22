@@ -7,14 +7,17 @@
   <title>Document</title>
 </head>
 <body>
-  <h2 id = 'sayText'>-></h2>
-  <input type="text" id='inputText'>
-  <input type="button" value="Say" id='textButton'>
+  <h2 id = 'say-text'>-></h2>
+  <input type="text" id='input-text'>
+  <input type="button" value="Submit" id='text-button'>
 </body>
 <script>
-  document.getElementById('textButton').addEventListener('click', ()=>{
-    const textToSay = document.getElementById('inputText').value;
-    document.getElementById('sayText').innerHTML = `-> ${textToSay}`;
-  }); 
+  document.getElementById('text-button').addEventListener('click', ()=>{
+    changeText();
+  });
+  const changeText = () => {
+    const text = document.getElementById('input-text').value;
+    document.getElementById('say-text').innerHTML = `-> ${textToSay}`;
+  } 
 </script>
 </html>
