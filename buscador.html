@@ -4,15 +4,15 @@
   const things = ["Petroleo", "Carne", "Rosca"];
 
   const search = term => {
-  const glosary = [...names, ...animals, ...things];
+    const glosary = [...names, ...animals, ...things];
     let matches = []; 
     term = term.toLowerCase();
     
     glosary.forEach( word => {
-        if( word.toLocaleLowerCase().includes(term)){ 
-            matches.push(word); 
-        }
-      });
+      if( word.toLocaleLowerCase().includes(term)){ 
+          matches.push(word); 
+      }
+    });
 
     return matches;
   }
