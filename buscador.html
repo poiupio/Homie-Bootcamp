@@ -1,0 +1,13 @@
+<script>
+const names = ["Pedro", "Maria", "Rosa"];
+const animals = ["Caballo", "Oso", "Perro"];
+const things = ["Petroleo", "Carne", "Rosca"];
+
+const search = term => {
+  const glosary = [...names, ...animals, ...things];
+  let matches = []; 
+  glosary.forEach( word => {if(word.includes(term)){ matches.push(word); }});
+
+  return matches;
+}
+</script>
