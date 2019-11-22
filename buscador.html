@@ -6,8 +6,12 @@
   const search = term => {
   const glosary = [...names, ...animals, ...things];
     let matches = []; 
+    term = term.toLowerCase();
+    
     glosary.forEach( word => {
-        if( word.toLocaleLowerCase().includes( term.toLowerCase() )){ matches.push(word); }
+        if( word.toLocaleLowerCase().includes(term)){ 
+            matches.push(word); 
+        }
       });
 
     return matches;
