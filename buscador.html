@@ -1,17 +1,17 @@
 <script>
-const names = ["Pedro", "Maria", "Rosa"];
-const animals = ["Caballo", "Oso", "Perro"];
-const things = ["Petroleo", "Carne", "Rosca"];
+  const names = ["Pedro", "Maria", "Rosa"];
+  const animals = ["Caballo", "Oso", "Perro"];
+  const things = ["Petroleo", "Carne", "Rosca"];
 
-const search = term => {
- const glosary = [...names, ...animals, ...things];
-  let matches = []; 
-  glosary.forEach( word => {
-      if((word.toLocaleLowerCase()).includes((term.toLowerCase()))){ matches.push(word); }
-    });
+  const search = term => {
+  const glosary = [...names, ...animals, ...things];
+    let matches = []; 
+    glosary.forEach( word => {
+        if( word.toLocaleLowerCase().includes( term.toLowerCase() )){ matches.push(word); }
+      });
 
-  return matches;
-}
+    return matches;
+  }
 
-console.log(search('rIa'));
+  console.log(search('rIa'));
 </script>
