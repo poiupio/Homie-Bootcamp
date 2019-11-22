@@ -4,10 +4,14 @@ const animals = ["Caballo", "Oso", "Perro"];
 const things = ["Petroleo", "Carne", "Rosca"];
 
 const search = term => {
-  const glosary = [...names, ...animals, ...things];
+ const glosary = [...names, ...animals, ...things];
   let matches = []; 
-  glosary.forEach( word => {if(word.includes(term)){ matches.push(word); }});
+  glosary.forEach( word => {
+      if((word.toLocaleLowerCase()).includes((term.toLowerCase()))){ matches.push(word); }
+    });
 
   return matches;
 }
+
+console.log(search('rIa'));
 </script>
