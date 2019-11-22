@@ -9,10 +9,11 @@
 <body>
   <input type="text" name="" id="first-num">
   <input type="text" name="" id="second-num">
-  <input type="button" value="/">    
-  <input type="button" value="+">    
-  <input type="button" value="-">    
-  <input type="button" value="*">    
+  <input type="button" onclick="calc('/');" value="/">    
+  <input type="button" onclick="calc('+');" value="+">    
+  <input type="button" onclick="calc('-');" value="-">    
+  <input type="button" onclick="calc('*');" value="*">    
+  <h2 id="result">-RESULT-</h2>
 </body>
 <script>
   const calculator = (firstNumber, secondNumber, operation) => {
@@ -24,6 +25,7 @@
         return firstNumber - secondNumber;
       break;
       case '/':
+        if (secondNumber == 0) {return alert("el segundo numero no puede ser 0");}
         return firstNumber / secondNumber;
       break;
       case '*':
@@ -32,6 +34,14 @@
     }
   }
 
-  
+  const calc = (operation) => {
+    firstNumber = parseFloat(document.getElementById('first-num').value);
+    secondNumber = parseFloat(document.getElementById('second-num').value);
+    result = document.getElementById('result');
+
+    if (isNaN(firstNumber) || isNaN(secondNumber)){return alert('Ambos elementos deben ser numeros')}
+    
+    result.innerHTML = calculator(firstNumber, secondNumber, operation);
+  }
 </script>
 </html>
