@@ -7,17 +7,11 @@ class Contact
     ]
   end
 
-  def all 
+  def self.all 
     @contacts
   end
 
-  def find_by(key, param)
+  def self.find_by(key, param)
     @contacts.select { |contact| contact[key] == param }
   end
 end
-
-contact = Contact.new
-
-p contact.all
-p '/////////////////////'
-p contact.find_by(:name,'Jose')
