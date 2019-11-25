@@ -5,11 +5,10 @@ const sumByIndex = elements => {
 
   elements.forEach(element => {
     digits = element.split('.');
-
-    if(!isNaN(digits[position])){
-        totalSum += parseFloat(digits[position]);
-        position++;
-      }
+    if(isNaN(digits[position])){return}
+    
+    totalSum += parseFloat(digits[position]);
+    position++;
   });
 
   return totalSum;
