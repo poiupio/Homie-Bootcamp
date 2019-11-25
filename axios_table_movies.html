@@ -1,32 +1,50 @@
-<div class="container">
-    <h2>Basic Table</h2>
-    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
-    <input type = "text" name = "Title" id = "title">
-    <input type = "text" name = 'year' id = 'year'>
-    <input type="button" onclick="search();" value="Search">
+movies_axios.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Movies</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Movie search</h2>
+    <input type = "text" name = "Title" id = "js-title">
+    <input type="button" onclick="getMovie();" value="Search">
     <br>
-  <table class = "table">
-    <thead>
-      <tr>
-        <th>Movie Name</th>
-        <th>Year</th>
-        <th>Actors</th>
-      </tr>
-    </thead>
-    <tbody id = 'table'>
-      <tr>
-        <!-- Example Movie 1 -->
-        <td>BLAH</td>
-        <td>BLAH</td>
-        <td>BLAH</td>
-      </tr>
-    </tbody>
-  </table>
+    <table class = "table">
+      <thead>
+        <tr>
+          <th>Movie Name</th>
+          <th>Year</th>
+          <th>Actors</th>
+        </tr>
+      </thead>
+      <tbody id = 'js-table'>
+      </tbody>
+    </table>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    
-    
-  
-  
-  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    const getMovie = () =>{
+      const movieTitle = document.getElementById('js-title').value;
+      const queryURL = "http://www.omdbapi.com/?t=" + movieTitle + "&y=&plot=short&apikey=40e9cece";
+      
+      axios.get(queryURL, {
+        responseType: 'json'
+      }).then(function(res) {
+        generateTable(res.data);    
+      })
+    }
+
+    const generateTable = res =>{
+      content =  `<tr><td>${res.Title}</td><td>${res.Year}</td><td>${res.Actors}</td></tr>`
+      document.getElementById('js-table').innerHTML += content;
+    }
+
   </script>
+</body>
+</html>
+
+  
