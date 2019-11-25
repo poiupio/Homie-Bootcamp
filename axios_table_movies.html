@@ -32,13 +32,13 @@
       
       axios.get(queryURL, {
         responseType: 'json'
-      }).then(function(res) {
-        generateTable(res.data);    
+      }).then(function(response) {
+        generateTable(response.data);    
       })
     }
 
-    const generateTable = res =>{
-      content =  `<tr><td>${res.Title}</td><td>${res.Year}</td><td>${res.Actors}</td></tr>`
+    const generateTable = response =>{
+      content = `<tr><td>${response.Title}</td><td>${response.Year}</td><td>${response.Actors}</td></tr>`
       document.getElementById('js-table').innerHTML += content;
     }
 
