@@ -12,7 +12,6 @@ end
 
 def max_sum_rows(array_of_arrays)
   max_sum = 0
-
   array_of_arrays.each do |array|
     array_sum = array.sum
     max_sum = (max_sum > array_sum ? max_sum : array_sum)
