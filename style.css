@@ -1,0 +1,72 @@
+@media (min-width: 800px) {
+  body {
+    background-color: #8D7AFF; 
+  }
+  #document{
+    margin:0 20% 0 20%;
+    background-color: white;
+  }
+}
+
+
+button{
+  background-color: white; 
+  border: 2px solid #8D7AFF;
+  color: #8D7AFF;
+  padding: 15px 120px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+.text{
+  font-size: 20px; 
+  color: #434343;
+  text-align: center;
+}
+#hola-propietario{
+  font-size: 25px; 
+  color: #666666;
+  text-align: center;
+}
+#footer{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+#header{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#header > img {
+  align-self: center;
+}
+#content{ 
+  display: flex;
+  flex-direction: column;
+}
+#content > div, button {
+  align-self: center;
+  margin-top: 4%;
+}
+
+img{
+  margin-top: 2%;
+}
+
+.text-container{
+  max-width:80%;
+  max-height:80%;
+  text-align: center;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+}
+.column > img, p{
+  align-self: center;
+  font-size: 15px; 
+  color: #434343;
+  text-align: center;
+}
