@@ -8,6 +8,9 @@
   }
 }
 
+.image{
+  max-width: 50%;
+}
 
 button{
   background-color: white; 
