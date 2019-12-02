@@ -2,7 +2,7 @@
   body {
     background-color: #8D7AFF; 
   }
-  #document{
+  #container{
     margin:0 20% 0 20%;
     background-color: white;
   }
@@ -23,7 +23,7 @@ button{
   color: #434343;
   text-align: center;
 }
-#hola-propietario{
+#greet{
   font-size: 25px; 
   color: #666666;
   text-align: center;
