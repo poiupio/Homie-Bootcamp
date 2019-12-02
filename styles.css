@@ -1,0 +1,68 @@
+#tittle{
+  font-size: 36px;
+  font-weight: 300;
+  color: #333;
+  text-align: center;
+  margin: 5% 0 5% 0; 
+}
+
+#jumbo-box{
+  display: flex;
+  flex-wrap: nowrap;
+  border: solid 1px #dbdbdb; 
+  margin: 0 10% 0 10%; 
+  max-height: 19em;
+  max-width: 80%;
+}
+
+#description{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  flex-direction: column;
+  align-content: stretch;
+  font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
+  padding: 2%;
+}
+
+#text-description{
+  color: #999;
+  font-size: 15px;
+  margin-bottom: 1%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#top-text{
+  color: #999;
+  font-size: 15px;
+  margin-bottom: 0%;
+}
+
+#price{
+  font-size: 20px;
+  margin-top: 0%;
+}
+
+#location{
+  font-size: 18px;
+  color: #2a63cb;
+  margin-bottom: 0%;
+}
+
+#city{
+  font-size: 14px;
+  color: #999;
+  margin-top: 0%;
+}
+
+#image{
+  width: 900%;
+  height: auto;
+  overflow: hidden;
+}
+
+#picture{
+  margin-top: -50%;
+  width: 100%;
+}
