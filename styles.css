@@ -5,10 +5,11 @@ body{
 }
 
 #container{
+  align-self: center;
   display: flex;
   flex-flow: column;
   background-color: white;
-  width: 38%;
+  width: 35%;
   height: 700px;
   margin: 0 31% 0 31%;
   border-radius: 10px;
@@ -38,6 +39,7 @@ body{
 }
 
 #content-description{
+  padding: 0% 0%;
   font-size: 16px;
   color: #4A4A4A;
 }
@@ -51,16 +53,16 @@ body{
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width: 60%;
+  width: 80%;
   height: 25%;
   border: dashed 2px #8D7AFF;
   background-color: #F9F9F9;
 }
 
 #cover-photo{
-  width: 25%;
+  width: 20%;
   height: 25%;
-  margin: 5% 0% 0% 36%;
+  margin: 5% 0% 0% 39%;
 }
 
 #footer > p {
