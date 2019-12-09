@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Examen</title>
+  </head>
+  <body>
+    <input type="text" name="nameMovie" id="name-movie" placeholder="Titulo">
+    <input type="button" value="Buscar" id="search">
+    <div id='response'>
+      <div class="container">
+        <br>
+        <h2>Informacion de la pelicula</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>|Movie Name</th>
+                <th>|Year</th>
+                <th>|Actors</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr id='rows'>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById('search').addEventListener('click', ()=>{
+        axiosQuery(document.getElementById('name-movie').value);
+      });
+
+      const axiosQuery = movieName => {
+        ;(async () => {
+          const queryResponse = await axios({
+            url: `http://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=40e9cece`,
+            method: 'get'
+          })
+          document.getElementById('rows').innerHTML = printResposne(queryResponse.data);
+        })() 
+      }
+
+      const printResposne = queryResponse => {
+        if(queryResponse.Response == 'False'){return '<h2>Pelicula no encontrada</h2>'}
+        
+        const movieTitle = queryResponse.Title;
+        const movieYear = queryResponse.Year;
+        const movieActors = queryResponse.Actors;
+        const htmlContent = `<td>|${movieTitle}</td><td>|${movieYear}</td><td>|${movieActors}</td>`;
+
+        return htmlContent;
+      }
+    </script>
+  </body>
+</html>
