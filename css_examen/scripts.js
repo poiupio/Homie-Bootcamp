@@ -1,9 +1,10 @@
-const buttonVisa = document.getElementsByClassName('visa-btn')[0];
-const buttonMastercard = document.getElementsByClassName('mastercard-btn')[0];
-const buttonAmex = document.getElementsByClassName('amex-btn')[0];
-const amexDisclaimer = document.getElementsByClassName('amex-disclaimer')[0];
-const defaultDisclaimer = document.getElementsByClassName('disclaimer')[0];
-const mastercardForm = document.getElementsByClassName('mastercard')[0];
+const buttonVisa = document.getElementsByClassName('js-visa-btn')[0];
+const buttonMastercard = document.getElementsByClassName('js-mastercard-btn')[0];
+const buttonAmex = document.getElementsByClassName('js-amex-btn')[0];
+const amexDisclaimer = document.getElementsByClassName('js-amex-disclaimer')[0];
+const defaultDisclaimer = document.getElementsByClassName('js-disclaimer')[0];
+const mastercardForm = document.getElementsByClassName('js-mastercard')[0];
+const payBtn = document.getElementsByClassName('js-pay-btn')[0];
 
 
 const setFunctions = () => {
@@ -40,6 +41,7 @@ const resetOtherButtons = () => {
   buttonVisa.style.borderColor = 'rgba(204, 204, 204, 0.658)';
   buttonMastercard.style.borderColor = 'rgba(204, 204, 204, 0.658)';
   buttonAmex.style.borderColor = 'rgba(204, 204, 204, 0.658)';
+  payBtn.style.display = 'block';
 }
 
 document.addEventListener("DOMContentLoaded", setFunctions(), false);

@@ -56,7 +56,7 @@ body{
   height: 50px;
 }
 
-.mastercard-btn{
+.js-mastercard-btn{
   background-image:url(mastercard.png);
   width: 60px;
   height: 50px;
@@ -64,7 +64,7 @@ body{
   margin-right: 5%;
 }
 
-.visa-btn{
+.js-visa-btn{
   background-image:url(visa.png);
   width: 65px;
   height: 30px;
@@ -72,7 +72,7 @@ body{
   margin-right: 5%;
 }
 
-.amex-btn{
+.js-amex-btn{
   background-image:url(amex.png);
   width: 60px;
   height: 45px;
@@ -122,12 +122,13 @@ body{
   text-align: center;
 }
 
-.mastercard, .amex-disclaimer{
+.js-mastercard, .js-amex-disclaimer{
   display: none;
 }
 
-.disclaimer{
+.js-disclaimer{
   margin-left:7%;
+  margin-bottom: 10%;
   color: rgb(155, 155, 155);
   font-size: 12px;
 }
@@ -144,7 +145,8 @@ body{
   background-color: white;
 }
 
-.pay-btn{
+.js-pay-btn{
+  display: none;
   border:none;
   background-color:  rgb(141, 122, 255);
   color:white;
@@ -186,7 +188,6 @@ body{
   left: 40%;
   top: 20%;
   width: 15%;
-  height: 40%;
   border: solid #fff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
