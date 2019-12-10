@@ -122,11 +122,10 @@ body{
   text-align: center;
 }
 
-/*
 .mastercard, .amex-disclaimer{
   display: none;
 }
-*/
+
 .disclaimer{
   margin-left:7%;
   color: rgb(155, 155, 155);
@@ -163,4 +162,50 @@ body{
 
 .card-validity{
   margin-right: 10%;
+}
+
+.save-card-input {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  background: white;
+  border-radius: 2px;
+  border: 2px solid rgb(141, 122, 255);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.save-card-input:checked {
+  background: rgb(141, 122, 255);
+}
+
+.save-card-input:after {
+  content: '';
+  position: relative;
+  left: 40%;
+  top: 20%;
+  width: 15%;
+  height: 40%;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.save-card-input:checked:after {
+  display: block;
+}
+
+.save-card-container{
+  display: flex;
+  background-color: white;
+  width: 90%;
+  height: 7%;
+  margin: 5% 0;
+  padding: 5% 0 0 2%;
+}
+
+.save-card-description{
+  margin-left: 2%;
 }
