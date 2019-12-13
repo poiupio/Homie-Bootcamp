@@ -4,22 +4,22 @@ body{
   padding: 0;
 }
 
-#container{
+.container{
   align-self: center;
   display: flex;
   flex-flow: column;
   background-color: white;
   width: 35%;
-  height: 700px;
+  height: 650px;
   margin: 0 31% 0 31%;
   border-radius: 10px;
 }
 
-#container > div {
+.container > div {
   align-self: center;
 }
 
-#tumbs-up{
+.tumbs-up{
   margin-top: 20px;
   border: solid 3px #8D7AFF;
   border-radius: 100%;
@@ -28,28 +28,28 @@ body{
   overflow: hidden;
 }
 
-#tumbs-up > img{
+.tumbs-up > img{
   margin: 20%;
   align-self: center;
 }
 
-#description{
+.description{
   text-align: center;
   padding: 0 20% 0 20%;
 }
 
-#content-description{
+.content-description{
   padding: 0% 0%;
   font-size: 16px;
   color: #4A4A4A;
 }
 
-#tittle-description{
+.tittle-description{
   font-size: 20px;
   color: #4A4A4A;
 }
 
-#footer{
+.footer{
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -59,23 +59,22 @@ body{
   background-color: #F9F9F9;
 }
 
-#cover-photo{
-  width: 20%;
-  height: 25%;
-  margin: 5% 0% 0% 39%;
+.cover-photo{
+  width: 60px;
+  height: 40px;
+  margin: 5% 0% 0% 42%;
 }
 
-#footer > p {
+.footer > p {
   text-align: center;
   color: #8D7AFF;
 }
 
-#footer > button {
+.footer > button {
   align-self: center;
   color: #ffffff;
   background-color: #8D7AFF;
   border-radius: 5px;
   width: 70%;
-  height: 20%;
-  
+  height: 20%; 
 }
