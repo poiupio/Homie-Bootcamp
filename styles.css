@@ -217,19 +217,31 @@ footer{
   }
 
   #search-bar-container{
-    width: 80%;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    width: 900px;
     height: 40px;
     margin: none;
   }
 
   #search-bar-container > * {
-    margin-top: -14px;
     align-self: baseline;
+    margin-top: -14px;
+    height: 20px;
   }
 
   .hideable{
-    align-self: center;
-    display: inline;
+    display: block;
+  }
+
+  .search-bar-label{
+    width: 200px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    text-align: center;
+    font-size: 12px;
   }
 
   #search-bar-container > p{
@@ -245,8 +257,8 @@ footer{
   }
   
   #search-bar{
-    width: 60%;
-    height: 35px;
+    width: 50%;
+    height: 20px;
     text-align: left;
     padding-left: 10px;
   }

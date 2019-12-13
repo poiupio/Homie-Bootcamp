@@ -7,7 +7,6 @@
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
   <div id='container'>
@@ -19,8 +18,10 @@
       <p id='header-greetings'>REGISTRATE, HAZ TU ZONA Y DEJA QUE LOS INMUEBLES TE ENCUENTREN...</p>
       <div id='search-bar-container'>
         <input type="text" id='search-bar' placeholder="Ej: Zocalo, Ciudad de Mexico"></input>
-        <input class='hideable' id='develop-checkbox' type="checkbox" value="develop"></input>
-        <p class='hideable'>Solo desarrollo</p>
+        <label class="search-bar-label">
+          <input class='hideable' id='develop-checkbox' type="checkbox" value="develop"></input>
+          <p class='hideable'>Solo desarrollo</p>
+        </label>
         <select class='hideable' id='movility'>
           <option>Movilidad</option>
         </select>
@@ -34,17 +35,17 @@
     <div id='content'>
       <p id="content-header">ASÍ DE FÁCIL ES ENCONTRAR TU NUEVO HOGAR</p>
       <div class="features">
-        <img src="img2.png" alt="" class="content-img">
+        <img src="img2.png" class="content-img">
         <p class="img-footer">Marca tu zona</p>
         <p class="description">Dibuja donde tu quieras dentro del mapa</p>
       </div>
       <div class="features">
-        <img src="img1.png" alt="" class="content-img">
+        <img src="img1.png" class="content-img">
         <p class="img-footer">Define tus filtros</p>
         <p class="description">Ajusta los filtros inteligentes y ve los resultados en tiempo real</p>
       </div>
       <div class="features">
-        <img src="img3.png" alt="" class="content-img">
+        <img src="img3.png" class="content-img">
         <p class="img-footer">No pierdas oportunidades</p>
         <p class="description">Descubre los inmuebles de hoy y los nuevos los enviamos a tu e-mail</p>
       </div>
@@ -53,7 +54,7 @@
       <p id="footer-title">LLEVA TUS ZONAS DONDE QUIERAS</p>
       <p id="footer-description">Usa nuestra aplicación móvil y deja que los inmuebles te encuentren</p>
       <button id='know-more-btn'>Conoce más aquí</button>
-      <img src="celphones.png" alt="" id="celphones">
+      <img src="celphones.png" id="celphones">
       <footer>a</footer>
     </div>
   </div>
