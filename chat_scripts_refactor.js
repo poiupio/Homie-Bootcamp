@@ -73,5 +73,3 @@ const generateResponse = (userName, userMessage) => {
 webSocket.onerror	= recivedData => { chatBox.append('<div class="system_error">Error Occurred - ' + recivedData.data + '</div>'); };
 
 webSocket.onclose = recivedData => { chatBox.append('<div class="system_msg">Connection Closed</div>'); };
-
-const video = img => { document.querySelector('#miImg').src = img; }
