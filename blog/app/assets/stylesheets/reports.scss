@@ -1,0 +1,416 @@
+// Place all the styles related to the Reports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@mixin set-as-flex($orientation) {
+  display: flex;
+  flex-flow: $orientation;
+}
+
+@mixin set-container-size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+body {
+  @include set-as-flex(column);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  @include set-as-flex(column);
+  @include set-container-size(375px, auto);
+  align-self: center;
+  background-color: white;
+}
+
+.back-arrow {
+  @include set-container-size(35px, 25px);
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.logo {
+  @include set-container-size(90px, 40px);
+  margin-left: 80px;
+}
+
+.profile-img-mobile {
+  @include set-container-size(30px, 30px);
+  margin-top: 5px;
+  margin-left: 70px;
+}
+
+.header[image] {
+  align-self: center;
+}
+
+.header {
+  @include set-as-flex(row);
+  @include set-container-size(375px, 70px);
+  align-self: center;
+  padding: 10px 0;
+  border-bottom: solid 2px #E4E1D3;
+}
+
+.content {
+  @include set-as-flex(column);
+}
+
+.mobile-caveat {
+  @include set-container-size(350px, 130px);
+  border: solid 2px rgb(228, 225, 211);
+  align-self: center;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.desktop-logo {
+  display: none;
+}
+
+.caveat-title {
+  font-weight: bold;  
+  font-size: 20px;
+  padding-top: 5px;
+  color: #333333;
+}
+
+.caveat-content {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #5a5959;
+  margin: 0px 12px; 
+}
+
+.left-columns, .right-column, .footer {
+  @include set-container-size(350px, auto); 
+  @include set-as-flex(column);
+  flex-wrap: nowrap;
+  align-self: center;
+}
+
+.left-columns {
+  border: solid 2px #E4E1D3;
+}
+
+.stadistics {
+  @include set-as-flex(column);
+  @include set-container-size(100%, auto);
+}
+
+.your-score-img {
+  @include set-container-size(160px, 160px);
+  align-self: center;
+  margin: 30px 0;
+}
+
+.your-score {
+  align-self: center;
+  font-weight: bold;
+  font-size: 45px;
+  margin-top: -145px;
+}
+
+.score-bar-grid {
+  @include set-container-size(220px, 30px);
+  font-size: 10px;
+  margin: 50px 0 30px 0;
+  text-align: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 15px 15px 15px;
+}
+
+.score-bar {
+  @include set-container-size(100%, 30px);
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.right-limit {
+  grid-column-start: 4;
+}
+
+.bad, .half, .good, .excelent {
+  grid-row-start: 3;
+}
+
+.score-bar-img {
+  @include set-container-size(100%, 10px)
+}
+
+.score-type {
+  margin: 0px 5px 5px 5px;
+  align-self: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.score-description {
+  align-self: center;
+  text-align: center;
+  font-size: 15px;
+  margin: 0 0 10px 0;
+  padding: 0px 5%;
+}
+
+.resume {
+  @include set-as-flex(column);
+  @include set-container-size(100%, 100%);
+  background-color: rgb(205, 215, 52);
+  padding: 50px 20px 0 30px;
+}
+
+.resume-item {
+  @include set-as-flex(row);
+  @include set-container-size(98%, 40px);
+  color: rgb(0, 0, 0);
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-left: 0px;
+}
+
+.question {
+  @include set-container-size(auto, auto);
+  margin: 0;
+}
+
+.answer {
+  @include set-container-size(auto, auto);
+  margin: 0;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.profile {
+  margin: 5px 0; 
+  border: solid 2px #E4E1D3;
+  @include set-container-size(100%, auto);
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 10px 60px 45px 25px;
+}
+
+.profile-description-img {
+  @include set-container-size(50%, 50px);
+  margin-left: 25%;
+  margin-top: 35px;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+}
+
+.profile-name {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.profile-address {
+  grid-row-start: 3;
+  grid-column-start: 2;
+}
+
+.profile-cost {
+  grid-row-start: 4;
+  grid-column-start: 2;
+}
+
+.description {
+  @include set-as-flex(column);
+  @include set-container-size(100%, auto);
+  font-size: 14px;
+  margin: 5px 0; 
+  border: solid 2px #E4E1D3;
+}
+
+.description-element {
+  @include set-as-flex(row);
+  @include set-container-size(100%, auto);
+  flex-wrap: nowrap;
+}
+
+.description-answer {
+  font-weight: bold;
+}
+
+.description-element {
+  margin:10px 0;
+  margin-right: 10px;
+}
+
+.icon {
+  @include set-container-size(30px, 30px);
+  margin: auto 10px;
+}
+
+.contact-info {
+  @include set-as-flex(column);
+  @include set-container-size(100%, auto);
+  align-self: flex-end;
+  margin: 10px 0
+}
+
+.footer{
+  align-self: center;
+  margin: 5px 0; 
+  padding-top: 0;
+  border: solid 2px #E4E1D3;
+  @include set-container-size(100%, auto);
+}
+
+.contact-name {
+  @include set-as-flex(row); 
+  flex-wrap: wrap;
+}
+
+.footer-description {
+  @include set-as-flex(row); 
+  @include set-container-size(auto, 40px);
+  text-align: center;
+  padding: 50px 30px;
+}
+
+.bw-logo {
+  @include set-container-size(150px, 40px);
+  align-self: center;
+  margin: 30px;
+}
+
+.save-button {
+  @include set-container-size(100px, 30px);
+  background-color: white;
+  border:solid 2px rgba(145, 143, 134, 0.575);
+  border-radius: 3px;
+  margin: 1px 0 0 5px;
+  font-weight: bold;
+  padding:0;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    display: none;
+  }
+  
+  .container {
+    @include set-container-size(750px, 1000px);
+  }
+
+  .desktop-logo {
+    @include set-container-size(75px, 75px);
+    margin-top: 10px;
+    display: block;
+  }
+
+  .mobile-caveat {
+    @include set-as-flex(row);
+    @include set-container-size(100%, 300px);
+    padding: 35px 10px 35px 70px;
+    flex-wrap: nowrap;
+  }
+
+  .caveat-title {
+    text-align: left;
+    font-size: 36px;
+    margin: 0;
+  }
+
+  .caveat-content {
+    text-align: left;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .caveat-column{
+    margin-left: 20px;
+    margin-top: 0;
+    width: 400px;
+  }
+
+  .content {
+    @include set-as-flex(row); 
+  }
+  
+  .right-column {
+    @include set-container-size(60%, 99%);
+    align-self: initial;
+  }
+  
+  .left-columns {
+    @include set-container-size(40%, 100%);
+    margin: 10px 10px 10px 0;
+  }
+  
+  .resume {
+    @include set-container-size(100%, 100%);
+    padding: 30px 0 10px 10px;
+  }
+
+  .footer {
+    font-size: 19px;
+  }
+
+  .profile {
+    @include set-container-size(100%, 240px);
+    grid-template-columns: auto;
+    margin-top: 0;
+    grid-template-rows: 50% 20% 10% 10%;
+    text-align: center;
+  }
+
+  .description {
+    margin: 0;
+    padding-right: 100px;
+  }
+  
+  .profile-description-img {
+    @include set-container-size(100px, 100px);
+    margin-left: 40%;
+    margin-top: 10px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  
+  .profile-name {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .profile-address {
+    color: rgba(0, 0, 0, 0.555);
+    grid-row-start: 3;
+    grid-column-start: 1;
+  }
+
+  .profile-cost {
+    color: rgba(0, 0, 0, 0.555);
+    grid-column-start: 1;
+    grid-row-start: 4;
+  }
+
+  .your-score {
+    font-size: 38px;
+    margin-top: -140px;
+  }
+
+  .score-description {
+    font-size: 12px;
+    padding: 0;
+  }
+
+  .left-limit {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .right-limit{
+    font-weight: bold;
+    text-align: right;
+  }
+}
