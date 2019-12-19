@@ -1,6 +1,8 @@
 class User
   include Mongoid::Document
-  validates :name, presence: {message: 'Hola'}
+  has_many :rents
+
+  validates :name, presence: { message: 'Se requiere nombre' }
   field :email, type: String
   field :name, type: String
   field :last_name, type: String
