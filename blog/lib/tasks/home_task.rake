@@ -1,6 +1,6 @@
 namespace :generate do
   desc 'Generating two homes for you ª3ª'
-  task houses: :environment do
+  task homes: :environment do
     @user = User.find_or_create_by(
       email: "rosalescd@hotmail.com",
       name: "Daniel",
