@@ -23,7 +23,7 @@ namespace :generate do
         furnished: true,
         gym: true
       },
-      status: :rented
+      _status: :rented
     )
 
     Home.create_with(owner: @owner).find_or_create_by(
@@ -34,7 +34,7 @@ namespace :generate do
         furnished: true,
         gym: true
       },
-      status: :published
+      _status: :published
     )
   end
 end
