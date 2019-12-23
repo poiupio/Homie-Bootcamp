@@ -1,10 +1,23 @@
 namespace :generate do
   desc 'Generating two homes for you ª3ª'
-  task :houses => :enviroment do
-    Home.create(
-      owner: self::create_owner,
-      price: 123456.78,
-      extra_service: 100.11,
+  task houses: :environment do
+    @user = User.find_or_create_by(
+      email: "rosalescd@hotmail.com",
+      name: "Daniel",
+      last_name: "Rosales",
+      mobile_phone: "9991336601",
+      work_place: "Homie <3",
+    )
+
+    @owner = Owner.find_or_create_by(
+      user: @user,
+      curp: "123456789123456789", 
+      registered_in_srpago: true
+    )
+
+    Home.create_with(owner: @owner).find_or_create_by(
+      price: 876543.21,
+      extra_service: 666.99,
       home_features: {
         garden: true,
         furnished: true,
@@ -13,8 +26,7 @@ namespace :generate do
       status: :rented
     )
 
-    Home.create(
-      owner: self::create_owner,
+    Home.create_with(owner: @owner).find_or_create_by(
       price: 123456.78,
       extra_service: 100.11,
       home_features: {
@@ -23,24 +35,6 @@ namespace :generate do
         gym: true
       },
       status: :published
-    )
-  end
-
-  def create_user do
-    user = User.create(
-      name: "Daniel",
-      last_name: "Rosales",
-      email: "rosalescd@hotmail.com",
-      mobile_phone: "9991336601",
-      work_place: "Homie <3"
-    )
-  end
-
-  def create_owner do
-    owner = Owner.create(
-      user: self::create_user,
-      curp: "123456789123456789", 
-      registered_in_srpago: true
     )
   end
 end

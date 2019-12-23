@@ -10,6 +10,7 @@ class User
   has_many :rents
  
   validates :email, presence: { message: 'Se requiere email' }
+  validates :email, uniqueness: true
   validates :name, presence: { message: 'Se requiere nombre' }
   validates :last_name, presence: { message: 'Se requiere apellidos' }
   validates :mobile_phone, presence: { message: 'Se requiere telefono' }

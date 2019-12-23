@@ -1,5 +1,6 @@
 class Home
   include Mongoid::Document
+  include Mongoid::Enum
   
   field :price, type: Float
   field :extra_service, type: Float
