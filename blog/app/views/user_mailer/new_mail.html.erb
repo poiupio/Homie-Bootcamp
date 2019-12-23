@@ -1,0 +1,139 @@
+<style>
+  body{
+    display:flex;
+    flex-flow: column;
+    background-color: rgba(20, 20, 20, 0.904);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  .container{
+    background-color: white;
+    Color: #1b1b1bc5;
+    align-self: center;
+    display:flex;
+    flex-flow:column;
+    width:573px;
+    height:478px;
+    flex-wrap:nowrap;
+  }
+
+  .header{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+  }
+
+  .homie_logo{
+    align-self: center;
+    margin-top: 10px;
+    width: 85px;
+    height: 35px;
+  }
+
+  .header_band{
+    width: 100%;
+    height: 70px;
+  }
+
+  .content{
+    display: flex;
+    flex-flow: column;
+    padding: 20px 30px;
+    text-align: center;
+  }
+
+  .greetings{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom:20px;
+  }
+
+  .content-description{
+    font-size: 12px;
+  }
+
+  .logo{
+    margin: auto 5px;
+  }
+
+  .companies{
+    margin: 15px 0;
+  }
+
+  .companies-logo{
+    align-self: center;
+    display: flex;
+    flex-flow: row;
+    width: 250px;
+    padding: 50px 0px;
+  }
+
+  .footer{
+    display: flex;
+    flex-flow: column;
+    Color: #1b1b1bc5;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .footer-description{
+    align-self: center;
+  }
+
+  .continue-button{
+    align-self: center;
+    background-color:white;
+    border: solid 0.5px#8d7aff;
+    Color: #8d7aff;
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 20px;
+    border-radius: 2px;
+  }
+</style>
+<div class="container">
+  <div class="header">
+    <%= email_image_tag("mailer/homie_logo.png", class: "homie_logo") %>
+    <%= email_image_tag("mailer/header_band.png", class: "header_band") %>
+  </div>
+  <div class="content">
+    <div class="greetings">Hola Propietario Apellido,</div>
+    <div class="content-description">
+      ¿Recuerdas el registro que iniciaste para poner en renta tu propiedad con nosotros?
+    </div>
+    <div class="content-description">
+      <a href="www.google.com">Continúa el proceso</a> y disfruta de todo lo que te ofrecemos. En Homie queremos que rentes tu
+      inmueble en el menor tiempo posible, por ello también publicamos tu anuncio en:
+    </div>
+    <div class="companies">
+      <div class="companies-logos">
+        <%= email_image_tag("mailer/lamundi_logo.png", class: "lamundi logo") %>
+        <%= email_image_tag("mailer/metros_cubicos_logo.png", class: "metros-cubicos logo") %>
+      </div>
+      <div class="companies-logos">
+        <%= email_image_tag("mailer/inmuebles_logo.png", class: "inmuebles logo") %>
+        <%= email_image_tag("mailer/graiglist_logo.png", class: "graiglist logo") %>
+      </div>
+      <div class="companies-logos">
+        <%= email_image_tag("mailer/gqplaceit_logo.png", class: "gqplaceit logo") %>
+        <%= email_image_tag("mailer/propiedades_logo.png", class: "propiedades logo") %>
+        <%= email_image_tag("mailer/mercado_libre_logo.png", class: "mercado-libre logo") %>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-description">
+      así como en anuncios destacados dentro de Facebook y Google,
+    </div>
+    <div class="footer-description">
+      todo esto sin costo y sin pedirte exclusividad. ¡No dejes pasar la oportunidad!
+    </div>
+  </div>
+  <%= button_tag(class: "continue-button") do
+    content_tag(:strong, 'Continuar con tu registro ahora')
+  end %>
+</div>
