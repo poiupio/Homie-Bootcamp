@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Container from './components/ContainerComponent';
+import Periodicity from './components/PeriodicityComponent';
 
 function App() {
     return (
-      <Container />
+      <Periodicity />
   );
 }
 
