@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import styled from 'styled-components';
 import ImageContext from './ImageContext';
 import Image from './ImageComponent';
 

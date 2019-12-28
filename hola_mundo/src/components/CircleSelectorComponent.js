@@ -12,6 +12,7 @@ const CircleSelector = (props) => {
   const [clicked, click] = useState(false);
   
   const CircleContainer = styled.div`
+    cursor: pointer;
     display: flex;
     flex-flow: row;
     border-radius: 100px;
@@ -21,12 +22,12 @@ const CircleSelector = (props) => {
     color: ${ clicked ? 'white' : 'gray' };
     margin: 10px 4px;
     font-size: 10px;
-    font-weight:bold;
+    font-weight: bold;
   `;
   
   return (
-    <CircleContainer onClick={changeState}>
-      <CircleText>{props.value}</CircleText>
+    <CircleContainer onClick={ changeState }>
+      <CircleText>{ props.value }</CircleText>
     </CircleContainer>
   );
 

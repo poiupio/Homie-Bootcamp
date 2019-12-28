@@ -5,12 +5,13 @@ import DateField from './DateFieldComponent';
 import CircleSelector from './CircleSelectorComponent';
 import RadioButton from './RadioButtonComponent';
 import InputText from './InputTextComponent';
+import CustomButton from './ButtonComponent';
 
 const Container = styled.section`
   display: flex;
   flex-flow: column;
   width: 376px;
-  height: 412px; 
+  height: 370px; 
   margin: 50px 30%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 `;
@@ -55,40 +56,53 @@ const StopWhenElement = styled.section`
   padding: 0px; 
 `;
 
+const ButtonContainer = styled.section `
+  margin-top: 0px;
+  margin-right: 460px;
+  display: flex;
+  flex-flow: row-reverse;
+`;
+
 const Periodicity = () => {
   return (
-    <Container> 
-      <Title>
-        Periodicidad personalizada
-      </Title>
-      <RepeatEach>
-        <FieldText>Repetir cada</FieldText>
-        <NumberField/>
-        <DateField/>
-      </RepeatEach>
-      <FieldText>Serepite el</FieldText>
-      <DaysContainer>
-          <CircleSelector value="D"/>
-          <CircleSelector value="L"/>
-          <CircleSelector value="M"/>
-          <CircleSelector value="X"/>
-          <CircleSelector value="J"/>
-          <CircleSelector value="V"/>
-          <CircleSelector value="S"/>
-      </DaysContainer>
-      <FieldText>Termina</FieldText>
-      <StopWhenContainer>
-        <StopWhenElement>
-          <RadioButton value='Nunca'/>
-        </StopWhenElement>
-        <StopWhenElement>
-          <RadioButton value='El'/><InputText value='27 de mar de 2020'/>
-        </StopWhenElement>
-        <StopWhenElement>
-          <RadioButton value='Después de '/><InputText value='13 repeticiones'/>
-        </StopWhenElement>        
-      </StopWhenContainer>
-    </Container>
+    <div>
+      <Container> 
+        <Title>
+          Periodicidad personalizada
+        </Title>
+        <RepeatEach>
+          <FieldText>Repetir cada</FieldText>
+          <NumberField/>
+          <DateField/>
+        </RepeatEach>
+        <FieldText>Serepite el</FieldText>
+        <DaysContainer>
+            <CircleSelector value="D"/>
+            <CircleSelector value="L"/>
+            <CircleSelector value="M"/>
+            <CircleSelector value="X"/>
+            <CircleSelector value="J"/>
+            <CircleSelector value="V"/>
+            <CircleSelector value="S"/>
+        </DaysContainer>
+        <FieldText>Termina</FieldText>
+        <StopWhenContainer>
+          <StopWhenElement>
+            <RadioButton value='Nunca'/>
+          </StopWhenElement>
+          <StopWhenElement>
+            <RadioButton value='El'/><InputText value='27 de mar de 2020'/>
+          </StopWhenElement>
+          <StopWhenElement>
+            <RadioButton value='Después de '/><InputText value='13 repeticiones' customWidth='180px'/>
+          </StopWhenElement>        
+        </StopWhenContainer>
+      </Container>
+      <ButtonContainer>
+        <CustomButton value='Listo' color='blue' />
+        <CustomButton value='Cancelar' color='gray' />
+      </ButtonContainer>
+    </div>
   );
 }
 
