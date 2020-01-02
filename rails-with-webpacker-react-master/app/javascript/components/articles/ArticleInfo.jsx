@@ -1,43 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { infoArticle } from '../../actions/articles';
-import axios from 'axios';
+import {infoArticle} from '../../actions/articles';
 
-const ArticleInfo = (props) => {
-  useEffect(() => {
-    props.showArticle(props.match.params.id);
-  }, []);
+class ArticleInfo extends Component {
+  constructor() {
+    super();
+    this.handleDelete = this.handleDelete.bind(this);
+  }
 
-  const handleDelete = () => {
-    axios.delete(`api/articles/${props.match.params.id}`, {})
+  componentDidMount() {
+    this.props.showArticle(this.props.match.params.id);
+  }
+
+  handleDelete() {
+    fetch(`api/articles/${this.props.match.params.id}`, {method: 'DELETE'})
       .then(() => {
-        props.history.push("/articles")
+        this.props.history.push("/articles")
       })
       .catch(error => console.log('error', error));
   }
 
-  return (
-    <div>
-      <h2>{props.article.id}: {props.article.title}</h2>
-      <p>{props.article.content}</p>
-      <p>
-        <Link to={`/articles/${props.article.id}/edit`} className="btn btn-outline-dark">Edit</Link>
-        <button onClick={handleDelete} className="btn btn-outline-dark">Delete</button>
-        <Link to="/articles" className="btn btn-outline-dark">Close</Link>
-      </p>
-      <hr />
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <h2>{this.props.article.id}: {this.props.article.title}</h2>
+        <p>{this.props.article.content}</p>
+        <p>
+          <Link to={`/articles/${this.props.article.id}/edit`} className="btn btn-outline-dark">Edit</Link>
+          <button onClick={this.handleDelete} className="btn btn-outline-dark">Delete</button> 
+          <Link to="/articles" className="btn btn-outline-dark">Close</Link>
+        </p>
+        <hr/>
+      </div>
+    )
+  }
 }
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
     article: state.articlesReducer.article
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+function mapDispatchToProps(dispatch) {
   return {
     showArticle: (id) => dispatch(infoArticle(id))
   }
