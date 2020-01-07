@@ -1,24 +1,64 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  let!(:user) { create(:user) }
 
-  it "is valid with valid attributes" do
-    user = User.new
-    user.email = FFaker::Internet.email
-    user.name = FFaker::Name.first_name
-    user.last_name = FFaker::Name.last_name
-    user.mobile_phone = FFaker::PhoneNumber
-    user.work_place = "Homie <3"
-    
-    expect(user).to be_valid
+  context "Valid creation of an user" do
+    it "is valid with valid attributes" do
+      expect(user).to be_valid
+    end
+  end  
+
+  context "Invalid creation of an user" do
+    it "is invalid without email" do
+      user.email = nil
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid without name" do
+      user.name = nil
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid without last name" do
+      user.last_name = nil
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid without movile phone" do
+      user.mobile_phone = nil
+      expect(user).to_not be_valid
+    end
+
+    it "is invalid without movile phone" do
+      user.work_place = nil
+      expect(user).to_not be_valid
+    end
   end
 
-  it "is invalid without name" do
-    user = User.new(name: nil)
-    expect(user).to_not be_valid
+  context "validate fields" do
+    it "Validate presence of email" do
+      should validate_presence_of(:email)
+    end
+
+    it "Validate presence of name" do
+      should validate_presence_of(:name)
+    end
+
+    it "Validate presence of last name" do
+      should validate_presence_of(:last_name)
+    end
+
+    it "Validate presence of mobile phone" do
+      should validate_presence_of(:mobile_phone)
+    end
+
+    it "Validate presence of work place" do
+      should validate_presence_of(:work_place)
+    end
   end
 
-  it "Validate presence of name" do
-    should validate_presence_of(:name)
+  it "Is asociated with rents" do
+    should have_many(:rents)
   end
 end

@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Rent, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let!(:rent) { create(:rent) }
+
+  it "Is asociated with home" do
+    should belongs_to(:homes)
+  end
+
+  it "Is asociated with user" do
+    should belongs_to(:user)
+  end
 end
