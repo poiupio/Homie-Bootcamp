@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Container from './components/ContainerComponent';
+import Calendar from './components/CalendarComponent';
 
 function App() {
     return (
-      <Container />
+      <Calendar />
   );
 }
 
