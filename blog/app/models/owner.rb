@@ -2,7 +2,7 @@ class Owner
   include Mongoid::Document
   
   field :curp, type: String
-  field :registered_in_srpago, type: boolean, default: false
+  field :registered_in_srpago, type: Boolean
   
   belongs_to :user, required: true
   has_many :homes
