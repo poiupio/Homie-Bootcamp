@@ -42,9 +42,9 @@ export const removeArticle = (id) => {
   };
 }
 
-export const allArticles = () => {
+export const allArticles = (page, per_page) => {
   return (dispatch) => {
-    return ArticlesApi.getArticles().then(articles => {
+    return ArticlesApi.getArticles(page, per_page).then(articles => {
       dispatch(successLoadArticles(articles));
     }).catch(error => {
       console.log('error', error)
