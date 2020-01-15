@@ -37,16 +37,13 @@ class SimilarHome
     eql_homes_ids
   end
 
-  def self.eql_indexs?(elements)
-    indexes = []
-
-    elements.each_with_index do |element, i|
-      elements[i + 1].nil? ? next : next_element = elements[i + 1]
-
-      indexes.push(i, i + 1) if element.eql?(next_element)
+  def self.eql_indexs?(atributes)
+    indexes=[]
+    atributes.each_with_index do |property, index| 
+      atributes.count(property) > 1 ? indexes<<index : next 
     end
-
-    indexes.uniq
+    
+    indexes
   end
 
   def self.print_eql_homes(owner_id, homes_compared)
